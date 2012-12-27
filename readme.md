@@ -1,6 +1,6 @@
 # WordPress Installer
 ---------------------------------------
-This shell script will fetch the latest WordPress and finally setup wp-config. It also installs some plugins.
+This bash script will fetch the latest WordPress and setup wp-config. It also installs some plugins.
 
 ## Installation
 ---------------------------------------
@@ -11,5 +11,5 @@ This shell script will fetch the latest WordPress and finally setup wp-config. I
 
 or run as root
 
-		$ cp wp.sh /usr/bin/wp-installer
-		Run the script by typing 'wp-installer' in any folder
+	cp wp.sh /usr/bin/wp-installer
+	Type 'wp-installer' in any folder
