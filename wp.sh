@@ -2,13 +2,9 @@
 
 # Get latest wp
 curl -O http://wordpress.org/latest.tar.gz
-# Untar
 tar -zxvf latest.tar.gz
-# move to root folder
 mv wordpress/* .
-# Delete folder
 rm -rf wordpress
-# Delete tar file
 rm latest.tar.gz
 
 # Get some Salt data
@@ -66,7 +62,8 @@ mkdir wp-content/languages
 mv *.mo wp-content/languages/
 mv *.po wp-content/languages/
 rm sv_SE-3.5.zip
-# Activate language files
+
+# Define language in wp config
 sed -i "" "s/define('WPLANG', '')/define('WPLANG', 'sv_SE')/g" wp-config.php
 
 # Install some plugins
