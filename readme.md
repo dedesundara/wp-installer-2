@@ -9,8 +9,7 @@ This shell script will fetch the latest WordPress and finally setup wp-config. I
 	git clone https://github.com/urre/wp-installer.git && cd wp-installer
 	./wp-installer.sh
 
-	or
+or
 
-##  Execute as root:
 		$ cp wp-install.sh /usr/bin/wp-installer
 		Run the script by typing 'wp-installer' in any folder
