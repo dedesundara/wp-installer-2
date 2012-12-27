@@ -13,7 +13,6 @@ sed '45,52d'  wp-config-sample.php > wp-config-stripped.php
 sed '44 r salt.txt' wp-config-stripped.php > wp-config-salt.php
 sed '82 r extras.txt' wp-config-salt.php > wp-config.php
 rm salt.txt
-rm extras.txt
 rm wp-config-sample.php
 rm wp-config-stripped.php
 rm wp-config-salt.php
