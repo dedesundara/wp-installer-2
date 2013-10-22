@@ -50,7 +50,17 @@ w
 q
 " | ex wp-config.php
 
-# Download language files
+# Insert language settings
+LANG="define('WPLANG', '')"
+SVLANG="define('WPLANG', 'sv_SE')"
+echo "%s/$LANG/$SVLANG/g
+w
+q
+" | ex wp-config.php
+
+echo "Downloading Swedish language files..."
+
+# Download Swedish language files
 wget --quiet http://svn.automattic.com/wordpress-i18n/sv_SE/tags/3.6.1/messages/admin-network-sv_SE.mo
 wget --quiet http://svn.automattic.com/wordpress-i18n/sv_SE/tags/3.6.1/messages/admin-sv_SE.mo
 wget --quiet http://svn.automattic.com/wordpress-i18n/sv_SE/tags/3.6.1/messages/admin-sv_SE.po
@@ -65,6 +75,8 @@ mv *.po wp-content/languages/
 # Create uploads folder and set permissions
 mkdir wp-content/uploads
 chmod 755 wp-content/uploads
+
+echo "Downloading some plugins..."
 
 # Install some plugins
 wget --quiet http://downloads.wordpress.org/plugin/advanced-custom-fields.zip;
