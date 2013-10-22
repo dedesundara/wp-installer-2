@@ -1,11 +1,11 @@
 #!/bin/bash
 
 # Get latest WordPress, download, untar, move to correct folder, remove install file
-curl -O http://wordpress.org/latest.tar.gz
-tar -zxvf latest.tar.gz
+wget --quiet http://sv.wordpress.org/wordpress-3.6.1-sv_SE.zip
+unzip -q wordpress-3.6.1-sv_SE.zip
 mv wordpress/* .
 rm -rf wordpress
-rm latest.tar.gz
+rm wordpress-3.6.1-sv_SE.zip
 
 # Get some Salt data
 curl -o salt.txt https://api.wordpress.org/secret-key/1.1/salt/
@@ -53,17 +53,6 @@ q
 # Create uploads folder and set permissions
 mkdir wp-content/uploads
 chmod 755 wp-content/uploads
-
-# Download language files
-wget --quiet http://sv.wordpress.org/wordpress-3.6.1-sv_SE.zip
-unzip -q wordpress-3.6.1-sv_SE.zip
-mkdir wp-content/languages
-mv *.mo wp-content/languages/
-mv *.po wp-content/languages/
-rm sv_SE-3.5.zip
-
-# Define language in wp config
-sed -i "" "s/define('WPLANG', '')/define('WPLANG', 'sv_SE')/g" wp-config.php
 
 # Install some plugins
 wget --quiet http://downloads.wordpress.org/plugin/advanced-custom-fields.zip;

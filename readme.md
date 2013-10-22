@@ -7,7 +7,7 @@ This bash script will fetch the latest WordPress and setup wp-config. It also in
 	mkdir mysite.com
 	cd mysite.com
 	git clone https://github.com/urre/wp-installer.git && cd wp-installer
-	./wp-installer.sh
+	bash wp-installer.sh
 
 or run as root
 
