@@ -1,11 +1,11 @@
 #!/bin/bash
 
 # Get latest WordPress, download, untar, move to correct folder, remove install file
-wget --quiet http://sv.wordpress.org/wordpress-3.6.1-sv_SE.zip
-unzip -q wordpress-3.6.1-sv_SE.zip
+curl -O http://sv.wordpress.org/wordpress-3.6.1-sv_SE.tar.gz
+tar -zxvf wordpress-3.6.1-sv_SE.tar.gz
 mv wordpress/* .
 rm -rf wordpress
-rm wordpress-3.6.1-sv_SE.zip
+rm wordpress-3.6.1-sv_SE.tar.gz
 
 # Get some Salt data
 curl -o salt.txt https://api.wordpress.org/secret-key/1.1/salt/
