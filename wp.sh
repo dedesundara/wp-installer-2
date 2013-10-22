@@ -1,11 +1,11 @@
 #!/bin/bash
 
 # Get latest WordPress, download, untar, move to correct folder, remove install file
-curl -O http://sv.wordpress.org/wordpress-3.6.1-sv_SE.tar.gz
-tar -zxvf wordpress-3.6.1-sv_SE.tar.gz
+curl -O http://wordpress.org/latest.tar.gz
+tar -zxvf latest.tar.gz
 mv wordpress/* .
 rm -rf wordpress
-rm wordpress-3.6.1-sv_SE.tar.gz
+rm latest.tar.gz
 
 # Get some Salt data
 curl -o salt.txt https://api.wordpress.org/secret-key/1.1/salt/
@@ -50,6 +50,18 @@ w
 q
 " | ex wp-config.php
 
+# Download language files
+wget --quiet http://svn.automattic.com/wordpress-i18n/sv_SE/tags/3.6.1/messages/admin-network-sv_SE.mo
+wget --quiet http://svn.automattic.com/wordpress-i18n/sv_SE/tags/3.6.1/messages/admin-sv_SE.mo
+wget --quiet http://svn.automattic.com/wordpress-i18n/sv_SE/tags/3.6.1/messages/admin-sv_SE.po
+wget --quiet http://svn.automattic.com/wordpress-i18n/sv_SE/tags/3.6.1/messages/sv_SE.mo
+wget --quiet http://svn.automattic.com/wordpress-i18n/sv_SE/tags/3.6.1/messages/sv_SE.po
+wget --quiet http://svn.automattic.com/wordpress-i18n/sv_SE/tags/3.6.1/messages/continents-cities-sv_SE.mo
+wget --quiet http://svn.automattic.com/wordpress-i18n/sv_SE/tags/3.6.1/messages/continents-cities-sv_SE.po
+mkdir wp-content/languages
+mv *.mo wp-content/languages/
+mv *.po wp-content/languages/
+
 # Create uploads folder and set permissions
 mkdir wp-content/uploads
 chmod 755 wp-content/uploads
@@ -75,10 +87,6 @@ wget --quiet http://downloads.wordpress.org/plugin/search-and-replace.zip
 unzip -q search-and-replace.zip
 mv search-and-replace/ wp-content/plugins/
 
-wget --quiet http://downloads.wordpress.org/plugin/admin-menu-tree-page-view.zip
-unzip -q admin-menu-tree-page-view.zip
-mv admin-menu-tree-page-view/ wp-content/plugins/
-
 wget --quiet http://downloads.wordpress.org/plugin/regenerate-thumbnails.zip
 unzip -q regenerate-thumbnails.zip
 mv regenerate-thumbnails/ wp-content/plugins/
@@ -89,7 +97,7 @@ mv simple-history/ wp-content/plugins/
 
 wget --quiet http://downloads.wordpress.org/plugin/my-page-order.zip
 unzip -q my-page-order.zip
-mv simple-history/ wp-content/plugins/
+mv my-page-order/ wp-content/plugins/
 
 wget --quiet http://downloads.wordpress.org/plugin/wordpress-seo.zip
 unzip -q wordpress-seo.zip
