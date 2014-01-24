@@ -61,13 +61,13 @@ q
 echo "Downloading Swedish language files..."
 
 # Download Swedish language files
-wget --quiet http://svn.automattic.com/wordpress-i18n/sv_SE/tags/3.6.1/messages/admin-network-sv_SE.mo
-wget --quiet http://svn.automattic.com/wordpress-i18n/sv_SE/tags/3.6.1/messages/admin-sv_SE.mo
-wget --quiet http://svn.automattic.com/wordpress-i18n/sv_SE/tags/3.6.1/messages/admin-sv_SE.po
-wget --quiet http://svn.automattic.com/wordpress-i18n/sv_SE/tags/3.6.1/messages/sv_SE.mo
-wget --quiet http://svn.automattic.com/wordpress-i18n/sv_SE/tags/3.6.1/messages/sv_SE.po
-wget --quiet http://svn.automattic.com/wordpress-i18n/sv_SE/tags/3.6.1/messages/continents-cities-sv_SE.mo
-wget --quiet http://svn.automattic.com/wordpress-i18n/sv_SE/tags/3.6.1/messages/continents-cities-sv_SE.po
+wget --quiet http://svn.automattic.com/wordpress-i18n/sv_SE/tags/3.8.1/messages/admin-network-sv_SE.mo
+wget --quiet http://svn.automattic.com/wordpress-i18n/sv_SE/tags/3.8.1/messages/admin-sv_SE.mo
+wget --quiet http://svn.automattic.com/wordpress-i18n/sv_SE/tags/3.8.1/messages/admin-sv_SE.po
+wget --quiet http://svn.automattic.com/wordpress-i18n/sv_SE/tags/3.8.1/messages/sv_SE.mo
+wget --quiet http://svn.automattic.com/wordpress-i18n/sv_SE/tags/3.8.1/messages/sv_SE.po
+wget --quiet http://svn.automattic.com/wordpress-i18n/sv_SE/tags/3.8.1/messages/continents-cities-sv_SE.mo
+wget --quiet http://svn.automattic.com/wordpress-i18n/sv_SE/tags/3.8.1/messages/continents-cities-sv_SE.po
 mkdir wp-content/languages
 mv *.mo wp-content/languages/
 mv *.po wp-content/languages/
