@@ -40,4 +40,4 @@ or run as root
 
 then type in any folder
 
-	'wp-installer'
+	wp-installer
