@@ -119,11 +119,6 @@ wget --quiet http://downloads.wordpress.org/plugin/relevanssi.zip
 unzip -q relevanssi.zip
 mv relevanssi/ wp-content/plugins/
 
-# Install my language file for Advanced custom fields
-git clone https://github.com/urre/ACF-Swedish-Translation.git acf-swe
-mv acf-swe/* wp-content/plugins/advanced-custom-fields/lang
-rm -rf acf-swe
-
 # Delete zip files
 rm -rf *.zip
 
