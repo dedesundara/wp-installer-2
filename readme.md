@@ -5,9 +5,10 @@
 
 ## Installation
 ---------------------------------------
-	mkdir mysite.com
-	cd mysite.com
-	git clone https://github.com/urre/wp-installer.git && cd wp-installer
+
+Clone to a folder ex. 'mysite.com'
+
+	git clone https://github.com/urre/wp-installer.git mysite.com && cd mysite.com
 	bash wp.sh
 	cd .. && mv wp-installer/* ./
 	rm -rf wp-installer
