@@ -5,15 +5,16 @@
 
 This bash script will fetch the latest WordPress and setup wp-config. It also adds Swedish translation files and installs some plugins.
 
-## Contents
+## What?
 + Downloads the latest version of WordPress
 + Adds security keys, salt data to wp-config.php
 + Lets you typ your local database name, user and password and setup wp-config.php
-+ Configure Swedish language settings and installs language files
++ Configure Swedish language settings and install sv_SE language files
 + Deletes plugin Hello Dolly
-+ Setup some default settings via my plugin [WordPress-Start-Settings](https://github.com/urre/WordPress-Start-Settings.git)
++ Setup some default settings via my starter plugin [WordPress-Start-Settings](https://github.com/urre/WordPress-Start-Settings.git)
++ Enjoy
 
-### Installs plugins:
+### Installs theese plugins:
 
 + [Advanced Custom fields](http://wordpress.org/plugins/advanced-custom-fields)
 + [Admin Menu Tree Page View](http://wordpress.org/plugins/admin-menu-tree-page-view)
