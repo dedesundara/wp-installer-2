@@ -1,6 +1,7 @@
 # WordPress Installer
 ---------------------------------------
-This bash script will fetch the latest WordPress and setup wp-config. It also installs some plugins.
+
+> This bash script will fetch the latest WordPress and setup wp-config. It also adds Swedish translation files and installs some plugins.
 
 ## Installation
 ---------------------------------------
@@ -14,4 +15,7 @@ This bash script will fetch the latest WordPress and setup wp-config. It also in
 or run as root
 
 	cp wp.sh /usr/bin/wp-installer
-	Type 'wp-installer' in any folder
+
+then type in any folder
+
+	'wp-installer'
