@@ -1,6 +1,7 @@
 #!/bin/bash
 
 # Get latest WordPress, download, untar, move to correct folder, remove install file
+echo "$(tput setaf 4)Downloading latest WordPress...$(tput sgr0)"
 curl -O http://wordpress.org/latest.tar.gz
 tar -zxvf latest.tar.gz
 mv wordpress/* .
@@ -18,15 +19,16 @@ rm wp-config-stripped.php
 rm wp-config-salt.php
 
 # User input for database name
-echo "Type database name: "
+echo "$(tput setaf 4)Type database name:$(tput sgr0)"
 read DBNAME
-echo "%s/database_name_here/$DBNAME/g
+echo %s/database_name_here/$DBNAME"
 w
 q
 " | ex wp-config.php
 
 # User input for database username
-echo "Type datebase username: "
+echo "$(tput setaf 4)Type database user: $(tput sgr0)"
+
 read DBUSER
 echo "%s/username_here/$DBUSER/g
 w
@@ -35,7 +37,8 @@ q
 
 
 # User input for database password
-echo "Type database password: "
+echo "$(tput setaf 4)Type database password: $(tput sgr0)"
+
 read DBPASS
 echo "%s/password_here/$DBPASS/g
 w
@@ -43,7 +46,7 @@ q
 " | ex wp-config.php
 
 # User input for database table prefix
-echo "Type database table prefix: "
+echo "$(tput setaf 4)Type database prefix: $(tput sgr0)"
 read DBPREFIX
 echo "%s/wp_/$DBPREFIX/g
 w
@@ -58,16 +61,16 @@ w
 q
 " | ex wp-config.php
 
-echo "Downloading Swedish language files..."
+echo "$(tput setaf 4)Downloading Swedish language files...$(tput sgr0)"
 
 # Download Swedish language files
-wget --quiet http://svn.automattic.com/wordpress-i18n/sv_SE/tags/3.8.1/messages/admin-network-sv_SE.mo
-wget --quiet http://svn.automattic.com/wordpress-i18n/sv_SE/tags/3.8.1/messages/admin-sv_SE.mo
-wget --quiet http://svn.automattic.com/wordpress-i18n/sv_SE/tags/3.8.1/messages/admin-sv_SE.po
-wget --quiet http://svn.automattic.com/wordpress-i18n/sv_SE/tags/3.8.1/messages/sv_SE.mo
-wget --quiet http://svn.automattic.com/wordpress-i18n/sv_SE/tags/3.8.1/messages/sv_SE.po
-wget --quiet http://svn.automattic.com/wordpress-i18n/sv_SE/tags/3.8.1/messages/continents-cities-sv_SE.mo
-wget --quiet http://svn.automattic.com/wordpress-i18n/sv_SE/tags/3.8.1/messages/continents-cities-sv_SE.po
+wget --quiet http://svn.automattic.com/wordpress-i18n/sv_SE/tags/3.9.1/messages/admin-network-sv_SE.mo
+wget --quiet http://svn.automattic.com/wordpress-i18n/sv_SE/tags/3.9.1/messages/admin-sv_SE.mo
+wget --quiet http://svn.automattic.com/wordpress-i18n/sv_SE/tags/3.9.1/messages/admin-sv_SE.po
+wget --quiet http://svn.automattic.com/wordpress-i18n/sv_SE/tags/3.9.1/messages/sv_SE.mo
+wget --quiet http://svn.automattic.com/wordpress-i18n/sv_SE/tags/3.9.1/messages/sv_SE.po
+wget --quiet http://svn.automattic.com/wordpress-i18n/sv_SE/tags/3.9.1/messages/continents-cities-sv_SE.mo
+wget --quiet http://svn.automattic.com/wordpress-i18n/sv_SE/tags/3.9.1/messages/continents-cities-sv_SE.po
 mkdir wp-content/languages
 mv *.mo wp-content/languages/
 mv *.po wp-content/languages/
@@ -76,7 +79,7 @@ mv *.po wp-content/languages/
 mkdir wp-content/uploads
 chmod 755 wp-content/uploads
 
-echo "Downloading some plugins..."
+echo "$(tput setaf 4)Downloading some plugins...$(tput sgr0)"
 
 # Install some plugins
 wget --quiet http://downloads.wordpress.org/plugin/advanced-custom-fields.zip;
@@ -129,3 +132,5 @@ rm wp-content/plugins/hello.php
 git clone https://github.com/urre/WordPress-Start-Settings.git
 mv WordPress-Start-Settings/ wp-content/plugins
 rm -rf WordPress-Start-Settings
+
+echo "$(tput setaf 2)Installation ok!$(tput sgr0)"
