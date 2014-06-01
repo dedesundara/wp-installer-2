@@ -19,7 +19,7 @@ rm wp-config-stripped.php
 rm wp-config-salt.php
 
 # User input for database name
-echo "$(tput setaf 4)Type database name:$(tput sgr0)"
+echo "$(tput setaf 4)Type database name (existing db):$(tput sgr0)"
 read DBNAME
 echo %s/database_name_here/$DBNAME"
 w
@@ -27,7 +27,7 @@ q
 " | ex wp-config.php
 
 # User input for database username
-echo "$(tput setaf 4)Type database user: $(tput sgr0)"
+echo "$(tput setaf 4)Type database user (existing db): $(tput sgr0)"
 
 read DBUSER
 echo "%s/username_here/$DBUSER/g
@@ -37,7 +37,7 @@ q
 
 
 # User input for database password
-echo "$(tput setaf 4)Type database password: $(tput sgr0)"
+echo "$(tput setaf 4)Type database password (existing db): $(tput sgr0)"
 
 read DBPASS
 echo "%s/password_here/$DBPASS/g
@@ -46,7 +46,7 @@ q
 " | ex wp-config.php
 
 # User input for database table prefix
-echo "$(tput setaf 4)Type database prefix: $(tput sgr0)"
+echo "$(tput setaf 4)Choose database prefix: $(tput sgr0)"
 read DBPREFIX
 echo "%s/wp_/$DBPREFIX/g
 w
